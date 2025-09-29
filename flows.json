@@ -8,6 +8,22 @@
         "env": []
     },
     {
+        "id": "69f70c59cf460b7f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4ba9896753459e27",
+        "type": "tab",
+        "label": "127.0.0.1 Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1e14417ee87d5a05",
         "type": "mqtt-broker",
         "name": "",
@@ -161,6 +177,264 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "9ed003eafac2263f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "0a96ebbbec5e6ed1",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "fad182eabb51e426",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "9ed003eafac2263f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "04a9c0b6c4e9822b",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "fad182eabb51e426",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "1c13972162de186e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4b1cd1e2e3eb688b",
+        "type": "ui_tab",
+        "name": "Sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c2b2186bec94970f",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "4b1cd1e2e3eb688b",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "97d5893b68089ef9",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "4b1cd1e2e3eb688b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "caa83089.9c72b",
+        "type": "ui_group",
+        "name": "Estado",
+        "tab": "4b1cd1e2e3eb688b",
+        "order": 1,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d1f9ff9d7e0c372d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
     },
     {
         "id": "fe12363aecc689ba",
@@ -380,5 +654,263 @@
                 "7dddbfb5b20b5550"
             ]
         ]
+    },
+    {
+        "id": "a9f48ec79050dad1",
+        "type": "mqtt in",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "topic": "local/127/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fe687eeeb865e371",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "2261b39f039d49e7",
+                "2b25fdc7041de129",
+                "8a02dfebc5bdf40b"
+            ]
+        ]
+    },
+    {
+        "id": "2261b39f039d49e7",
+        "type": "change",
+        "z": "4ba9896753459e27",
+        "name": "temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temp",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "3a7046e8daac9b15"
+            ]
+        ]
+    },
+    {
+        "id": "2b25fdc7041de129",
+        "type": "change",
+        "z": "4ba9896753459e27",
+        "name": "hum",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.hum",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "53272d53c0966ae5"
+            ]
+        ]
+    },
+    {
+        "id": "8a02dfebc5bdf40b",
+        "type": "change",
+        "z": "4ba9896753459e27",
+        "name": "est",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.est",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "1698bd8883dfd7b2"
+            ]
+        ]
+    },
+    {
+        "id": "fd4d0ed0442316ad",
+        "type": "inject",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 480,
+        "wires": [
+            [
+                "6562e44bd52f3e8c"
+            ]
+        ]
+    },
+    {
+        "id": "6562e44bd52f3e8c",
+        "type": "function",
+        "z": "4ba9896753459e27",
+        "name": "Funcion de json",
+        "func": "\nlet temperatura = (Math.random() * (50 - 20) + 20).toFixed(0);\n\nlet humedad = (Math.random() * (80 - 40) + 40).toFixed(0);\n\nlet estado = Math.random() < 0.5;\n\n\nmsg.payload = {\n    \"temperatura\": temperatura,\n    \"humedad\": parseInt(humedad), \n    \"estado\": estado\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "2b4edaf528082beb"
+            ]
+        ]
+    },
+    {
+        "id": "2b4edaf528082beb",
+        "type": "mqtt out",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "topic": "sensores/temperatura",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fe687eeeb865e371",
+        "x": 700,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3a7046e8daac9b15",
+        "type": "ui_gauge",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "group": "c2b2186bec94970f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "53272d53c0966ae5",
+        "type": "ui_gauge",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "group": "97d5893b68089ef9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1698bd8883dfd7b2",
+        "type": "ui_led",
+        "z": "4ba9896753459e27",
+        "order": 0,
+        "group": "caa83089.9c72b",
+        "width": 0,
+        "height": 0,
+        "label": "Estado",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 710,
+        "y": 340,
+        "wires": []
     }
 ]
