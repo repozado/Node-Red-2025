@@ -32,30 +32,22 @@
         "env": []
     },
     {
-        "id": "15626e861d29b27e",
-        "type": "group",
-        "z": "a1c027bdf20d4579",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "52c21facadeb7e82",
-            "3104b4a5a31e7c8a",
-            "00595b3060d118fa"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 612,
-        "h": 82
+        "id": "flow1",
+        "type": "tab",
+        "label": "TempHum_Sim",
+        "disabled": false,
+        "info": "Flujo para simular sensor de temperatura y humedad, publica en broker local (Mosquitto) y en HiveMQ Cloud. Incluye dashboard y botón que envía nombre+fecha de nacimiento a ambos brokers."
     },
     {
-        "id": "817573422c9d1136",
+        "id": "c0fd1faa777aecf0",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "556006c8da696a5b",
         "type": "group",
         "z": "a1c027bdf20d4579",
         "style": {
@@ -68,12 +60,14 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "f38cb56cb0fca601",
-            "ee16ec924d01a701"
+            "04b3b9ef0d551d24",
+            "d96230e91cf0b9d5",
+            "6bdfcab5d3043e4e",
+            "f3c5cbebd30cccfa"
         ],
         "x": 14,
-        "y": 119,
-        "w": 392,
+        "y": 319,
+        "w": 752,
         "h": 82
     },
     {
@@ -102,7 +96,7 @@
         "h": 82
     },
     {
-        "id": "556006c8da696a5b",
+        "id": "817573422c9d1136",
         "type": "group",
         "z": "a1c027bdf20d4579",
         "style": {
@@ -115,14 +109,35 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "04b3b9ef0d551d24",
-            "d96230e91cf0b9d5",
-            "6bdfcab5d3043e4e",
-            "f3c5cbebd30cccfa"
+            "f38cb56cb0fca601",
+            "ee16ec924d01a701"
         ],
         "x": 14,
-        "y": 319,
-        "w": 752,
+        "y": 119,
+        "w": 392,
+        "h": 82
+    },
+    {
+        "id": "15626e861d29b27e",
+        "type": "group",
+        "z": "a1c027bdf20d4579",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "52c21facadeb7e82",
+            "3104b4a5a31e7c8a",
+            "00595b3060d118fa"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 612,
         "h": 82
     },
     {
@@ -190,7 +205,7 @@
     {
         "id": "5908edeada9de2c5",
         "type": "mqtt-broker",
-        "name": "",
+        "name": "Mosquito",
         "broker": "test.mosquitto.org",
         "port": 1883,
         "clientid": "",
@@ -350,7 +365,7 @@
                 "cols": 12
             }
         ],
-        "order": 2,
+        "order": 3,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -539,20 +554,6 @@
         }
     },
     {
-        "id": "b0b872640ddfeb87",
-        "type": "ui-group",
-        "name": "Group 2",
-        "page": "68c95bba92cddcd7",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
         "id": "68c95bba92cddcd7",
         "type": "ui-page",
         "name": "Page 2",
@@ -583,10 +584,178 @@
                 "cols": "12"
             }
         ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b0b872640ddfeb87",
+        "type": "ui-group",
+        "name": "Group 2",
+        "page": "68c95bba92cddcd7",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "cfg_mqtt_local",
+        "type": "mqtt-broker",
+        "name": "Mosquitto local",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "node-red-local-{{random}}",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cfg_mqtt_hivemq",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Cloud ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "node-red-cloud-{{random}}",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ui_tab",
+        "type": "ui_tab",
+        "name": "Dashboard Sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group",
+        "type": "ui_group",
+        "name": "Sensor Panel",
+        "tab": "ui_tab",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "9ad175b279df9b5c",
+        "type": "mqtt-broker",
+        "name": "HIveMQ",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2256f48bd58c2398",
+        "type": "ui-page",
+        "name": "Pagina de sensor",
+        "ui": "9ed003eafac2263f",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
         "order": 1,
         "className": "",
         "visible": "true",
         "disabled": "false"
+    },
+    {
+        "id": "c9528b87d7b88974",
+        "type": "ui-group",
+        "name": "Group Sensor",
+        "page": "2256f48bd58c2398",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "fe12363aecc689ba",
@@ -1549,8 +1718,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1070,
-        "y": 540,
+        "x": 950,
+        "y": 520,
         "wires": [
             []
         ]
@@ -1603,8 +1772,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1060,
-        "y": 620,
+        "x": 940,
+        "y": 600,
         "wires": [
             []
         ]
@@ -1629,8 +1798,8 @@
         "className": "",
         "value": "payload.direccion",
         "valueType": "msg",
-        "x": 1050,
-        "y": 460,
+        "x": 930,
+        "y": 440,
         "wires": []
     },
     {
@@ -1670,9 +1839,9 @@
         "y": 520,
         "wires": [
             [
-                "6bc15551d6638aa7",
                 "810cc5f8c437e7b3",
-                "ae99ec23aaf7c3f0"
+                "ae99ec23aaf7c3f0",
+                "6bc15551d6638aa7"
             ]
         ]
     },
@@ -1744,5 +1913,851 @@
                 "d25ac98857fbfee5"
             ]
         ]
+    },
+    {
+        "id": "inject_interval",
+        "type": "inject",
+        "z": "flow1",
+        "name": "Generar cada 5s",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.5,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "fn_generate"
+            ]
+        ]
+    },
+    {
+        "id": "fn_generate",
+        "type": "function",
+        "z": "flow1",
+        "name": "Generar temp + hum (2 outputs)",
+        "func": "// Output 1 = temperatura, Output 2 = humedad\nconst temp = (Math.random()*15)+20; // 20.0 - 35.0\nconst hum = Math.floor(Math.random()*50)+30; // 30 - 79\nconst now = Date.now();\nconst msgTemp = { payload: Number(temp.toFixed(1)), topic: 'sensors/temperature', timestamp: now };\nconst msgHum = { payload: Number(hum), topic: 'sensors/humidity', timestamp: now };\nreturn [msgTemp, msgHum];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "mqtt_out_local_temp",
+                "mqtt_out_cloud_temp",
+                "gauge_temp",
+                "chart"
+            ],
+            [
+                "mqtt_out_local_hum",
+                "mqtt_out_cloud_hum",
+                "gauge_hum",
+                "chart"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out_local_temp",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub Local - temp",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cfg_mqtt_local",
+        "x": 650,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_cloud_temp",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub HiveMQ - temp",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "cfg_mqtt_hivemq",
+        "x": 650,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_local_hum",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub Local - hum",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cfg_mqtt_local",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_cloud_hum",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub HiveMQ - hum",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cfg_mqtt_hivemq",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "gauge_temp",
+        "type": "ui_gauge",
+        "z": "flow1",
+        "name": "Gauge Temperatura",
+        "group": "ui_group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperatura (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 50,
+        "colors": [],
+        "x": 880,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "gauge_hum",
+        "type": "ui_gauge",
+        "z": "flow1",
+        "name": "Gauge Humedad",
+        "group": "ui_group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humedad (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [],
+        "x": 880,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "chart",
+        "type": "ui_chart",
+        "z": "flow1",
+        "name": "Chart Temp & Hum",
+        "group": "ui_group",
+        "order": 3,
+        "width": 12,
+        "height": 6,
+        "label": "Temperatura y Humedad",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [],
+        "outputs": 1,
+        "x": 890,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ui_button_send",
+        "type": "ui_button",
+        "z": "flow1",
+        "name": "Enviar nombre+fecNac",
+        "group": "ui_group",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Enviar Datos",
+        "tooltip": "Envía nombre y fecha de nacimiento a ambos brokers",
+        "color": "",
+        "bgcolor": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "fn_send_info"
+            ]
+        ]
+    },
+    {
+        "id": "fn_send_info",
+        "type": "function",
+        "z": "flow1",
+        "name": "Formatear info (2 outputs)",
+        "func": "// Cambia estos valores por los tuyos antes de la entrega\nconst NAME = 'TU_NOMBRE_COMPLETO';\nconst DOB = 'YYYY-MM-DD';\nconst payload = { name: NAME, fecha_nacimiento: DOB, timestamp: new Date().toISOString() };\nconst msg = { payload: JSON.stringify(payload), topic: 'sensors/info' };\n// output 1 -> brokers (temp/hum mqtt out nodes no reciben esto)\nreturn [msg, msg];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "mqtt_out_local_info"
+            ],
+            [
+                "mqtt_out_cloud_info"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out_local_info",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub Local - info",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cfg_mqtt_local",
+        "x": 880,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_cloud_info",
+        "type": "mqtt out",
+        "z": "flow1",
+        "name": "Pub HiveMQ - info",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cfg_mqtt_hivemq",
+        "x": 880,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "mqtt_in_local",
+        "type": "mqtt in",
+        "z": "flow1",
+        "name": "Sub Local (sensors/#)",
+        "topic": "sensors/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "cfg_mqtt_local",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [
+                "debug_local"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_in_cloud",
+        "type": "mqtt in",
+        "z": "flow1",
+        "name": "Sub HiveMQ (sensors/#)",
+        "topic": "sensors/#",
+        "qos": "0",
+        "broker": "cfg_mqtt_hivemq",
+        "inputs": 0,
+        "x": 380,
+        "y": 580,
+        "wires": [
+            [
+                "debug_cloud"
+            ]
+        ]
+    },
+    {
+        "id": "debug_local",
+        "type": "debug",
+        "z": "flow1",
+        "name": "Debug Local",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "debug_cloud",
+        "type": "debug",
+        "z": "flow1",
+        "name": "Debug HiveMQ",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 640,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "d9b60626e0299e93",
+        "type": "inject",
+        "z": "c0fd1faa777aecf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "e3c5545904f9b9b6",
+                "e004d68c5ea8311f"
+            ]
+        ]
+    },
+    {
+        "id": "e3c5545904f9b9b6",
+        "type": "random",
+        "z": "c0fd1faa777aecf0",
+        "name": "random temp",
+        "low": "0",
+        "high": "50",
+        "inte": "true",
+        "property": "payload",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "cbe2be5c85e6eda9"
+            ]
+        ]
+    },
+    {
+        "id": "e004d68c5ea8311f",
+        "type": "random",
+        "z": "c0fd1faa777aecf0",
+        "name": "random hum",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "9aa9365caf4662e8"
+            ]
+        ]
+    },
+    {
+        "id": "593333d336a94f14",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquito temp",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5908edeada9de2c5",
+        "x": 620,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f11dcf0722b80f72",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9ad175b279df9b5c",
+        "x": 610,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "cbe2be5c85e6eda9",
+        "type": "function",
+        "z": "c0fd1faa777aecf0",
+        "name": "temperatura",
+        "func": "const msgTemp = { payload: msg.payload, topic: 'playa/agua/pato/temp'};\nreturn msgTemp;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "593333d336a94f14",
+                "a3b0156c81074f51",
+                "45bab41a9db658ce",
+                "6279780e34b428d9"
+            ]
+        ]
+    },
+    {
+        "id": "9aa9365caf4662e8",
+        "type": "function",
+        "z": "c0fd1faa777aecf0",
+        "name": "humedad",
+        "func": "const msghum = { payload: msg.payload, topic: 'playa/agua/pato/hum'};\nreturn msghum;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "f11dcf0722b80f72",
+                "1d5df994e824f2fb",
+                "3ba927308fe95d33",
+                "6279780e34b428d9"
+            ]
+        ]
+    },
+    {
+        "id": "1d5df994e824f2fb",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquito hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5908edeada9de2c5",
+        "x": 620,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "a3b0156c81074f51",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ temp",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9ad175b279df9b5c",
+        "x": 620,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "411f173c030d1263",
+        "type": "debug",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c870c970dbddb7bf",
+        "type": "debug",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquitto",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "6c0d2f851102bad3",
+        "type": "mqtt in",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquito",
+        "topic": "playa/agua/pato/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5908edeada9de2c5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 380,
+        "wires": [
+            [
+                "c870c970dbddb7bf"
+            ]
+        ]
+    },
+    {
+        "id": "61fe1534cae9244b",
+        "type": "mqtt in",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ",
+        "topic": "playa/agua/pato/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9ad175b279df9b5c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 440,
+        "wires": [
+            [
+                "411f173c030d1263"
+            ]
+        ]
+    },
+    {
+        "id": "45bab41a9db658ce",
+        "type": "ui-gauge",
+        "z": "c0fd1faa777aecf0",
+        "name": "TEMPERATURA",
+        "group": "c9528b87d7b88974",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Humedad",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "C°",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "25",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ba927308fe95d33",
+        "type": "ui-gauge",
+        "z": "c0fd1faa777aecf0",
+        "name": "HUMEDAD",
+        "group": "c9528b87d7b88974",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Humedad",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 650,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6279780e34b428d9",
+        "type": "ui-chart",
+        "z": "c0fd1faa777aecf0",
+        "group": "c9528b87d7b88974",
+        "name": "TemperaturaxHumedad",
+        "label": "chart",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "590d1730de82637a",
+        "type": "ui-button",
+        "z": "c0fd1faa777aecf0",
+        "group": "c9528b87d7b88974",
+        "name": "DATOS",
+        "label": "button",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "1ca75e1865802f5b"
+            ]
+        ]
+    },
+    {
+        "id": "1ca75e1865802f5b",
+        "type": "function",
+        "z": "c0fd1faa777aecf0",
+        "name": "function 1",
+        "func": "const NAME = 'JOSE ALEXANDER RODRIGUEZ ORDOÑEZ';\nconst DOB = '2005-02-10';\nconst payload = { name: NAME, fecha_nacimiento: DOB};\nconst msgINF = { payload: JSON.stringify(payload), topic: 'playa/agua/pato/inf' };\nreturn msgINF;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 520,
+        "wires": [
+            [
+                "008643d7166f14fe",
+                "c664304c6153ac5c"
+            ]
+        ]
+    },
+    {
+        "id": "008643d7166f14fe",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9ad175b279df9b5c",
+        "x": 850,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c664304c6153ac5c",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquito hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5908edeada9de2c5",
+        "x": 860,
+        "y": 540,
+        "wires": []
     }
 ]
