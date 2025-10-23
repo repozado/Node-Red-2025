@@ -32,16 +32,17 @@
         "env": []
     },
     {
-        "id": "flow1",
-        "type": "tab",
-        "label": "TempHum_Sim",
-        "disabled": false,
-        "info": "Flujo para simular sensor de temperatura y humedad, publica en broker local (Mosquitto) y en HiveMQ Cloud. Incluye dashboard y botón que envía nombre+fecha de nacimiento a ambos brokers."
-    },
-    {
         "id": "c0fd1faa777aecf0",
         "type": "tab",
         "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "27828e16aed13ba8",
+        "type": "tab",
+        "label": "Simulador Celdas de Trabajo (IoT 6to Sem)",
         "disabled": false,
         "info": "",
         "env": []
@@ -112,9 +113,9 @@
             "f38cb56cb0fca601",
             "ee16ec924d01a701"
         ],
-        "x": -46,
+        "x": 14,
         "y": 119,
-        "w": 452,
+        "w": 392,
         "h": 82
     },
     {
@@ -413,6 +414,306 @@
         "sessionExpiry": ""
     },
     {
+        "id": "9ed003eafac2263f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "0a96ebbbec5e6ed1",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "fad182eabb51e426",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "9ed003eafac2263f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "68c95bba92cddcd7",
+        "type": "ui-page",
+        "name": "Page 2",
+        "ui": "9ed003eafac2263f",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "2256f48bd58c2398",
+        "type": "ui-page",
+        "name": "Pagina de sensor",
+        "ui": "9ed003eafac2263f",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "04a9c0b6c4e9822b",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "fad182eabb51e426",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "b0b872640ddfeb87",
+        "type": "ui-group",
+        "name": "Group 2",
+        "page": "68c95bba92cddcd7",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c9528b87d7b88974",
+        "type": "ui-group",
+        "name": "Group Sensor",
+        "page": "2256f48bd58c2398",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7a4dd23066bfae3c",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "88c45a61e84912b1",
+        "type": "ui-page",
+        "name": "Celdas de trabajo",
+        "ui": "9ed003eafac2263f",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "7a4dd23066bfae3c",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b1e725e9fb17355d",
+        "type": "ui-group",
+        "name": "Productividad por turno",
+        "page": "88c45a61e84912b1",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6d47c419f0247b5f",
+        "type": "ui-group",
+        "name": "Estado de celda",
+        "page": "88c45a61e84912b1",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a899fcbf322003a7",
+        "type": "ui-group",
+        "name": "KPIs por turno",
+        "page": "88c45a61e84912b1",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c246d49182a70895",
+        "type": "ui-group",
+        "name": "Controles de simulación",
+        "page": "88c45a61e84912b1",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "4b1cd1e2e3eb688b",
         "type": "ui_tab",
         "name": "Sensores",
@@ -567,206 +868,6 @@
         "disp": true,
         "width": "12",
         "collapse": false
-    },
-    {
-        "id": "9ed003eafac2263f",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
-        "id": "fad182eabb51e426",
-        "type": "ui-page",
-        "name": "Page 1",
-        "ui": "9ed003eafac2263f",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "0a96ebbbec5e6ed1",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": 0,
-                "cols": 3
-            },
-            {
-                "name": "Tablet",
-                "px": 576,
-                "cols": 6
-            },
-            {
-                "name": "Small Desktop",
-                "px": 768,
-                "cols": 9
-            },
-            {
-                "name": "Desktop",
-                "px": 1024,
-                "cols": 12
-            }
-        ],
-        "order": 3,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "68c95bba92cddcd7",
-        "type": "ui-page",
-        "name": "Page 2",
-        "ui": "9ed003eafac2263f",
-        "path": "/page2",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "0a96ebbbec5e6ed1",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 2,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "2256f48bd58c2398",
-        "type": "ui-page",
-        "name": "Pagina de sensor",
-        "ui": "9ed003eafac2263f",
-        "path": "/page3",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "0a96ebbbec5e6ed1",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "04a9c0b6c4e9822b",
-        "type": "ui-group",
-        "name": "Group 1",
-        "page": "fad182eabb51e426",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "b0b872640ddfeb87",
-        "type": "ui-group",
-        "name": "Group 2",
-        "page": "68c95bba92cddcd7",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "c9528b87d7b88974",
-        "type": "ui-group",
-        "name": "Group Sensor",
-        "page": "2256f48bd58c2398",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "0a96ebbbec5e6ed1",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094CE",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "f8121fc439337aa6",
-        "type": "ui-link",
-        "name": "Link 1",
-        "ui": "9ed003eafac2263f",
-        "path": "/",
-        "icon": "home",
-        "order": 4,
-        "visible": "true",
-        "disabled": "false"
     },
     {
         "id": "fe12363aecc689ba",
@@ -1033,7 +1134,7 @@
         "y": 200,
         "wires": [
             [
-                "3a7046e8daac9b15"
+                "2c0032d6eaf62940"
             ]
         ]
     },
@@ -1060,7 +1161,7 @@
         "y": 280,
         "wires": [
             [
-                "53272d53c0966ae5"
+                "bc7f45240943c90d"
             ]
         ]
     },
@@ -1087,7 +1188,7 @@
         "y": 360,
         "wires": [
             [
-                "1698bd8883dfd7b2"
+                "c393f64495609f3e"
             ]
         ]
     },
@@ -1159,90 +1260,143 @@
         "wires": []
     },
     {
-        "id": "3a7046e8daac9b15",
-        "type": "ui_gauge",
+        "id": "2c0032d6eaf62940",
+        "type": "ui-gauge",
         "z": "4ba9896753459e27",
         "name": "",
-        "group": "c2b2186bec94970f",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Temperatura",
-        "label": "°C",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 690,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "53272d53c0966ae5",
-        "type": "ui_gauge",
-        "z": "4ba9896753459e27",
-        "name": "",
-        "group": "97d5893b68089ef9",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Humedad",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 720,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "1698bd8883dfd7b2",
-        "type": "ui_led",
-        "z": "4ba9896753459e27",
-        "order": 0,
-        "group": "caa83089.9c72b",
-        "width": 0,
-        "height": 0,
-        "label": "Estado",
-        "labelPlacement": "right",
-        "labelAlignment": "center",
-        "colorForValue": [
+        "group": "04a9c0b6c4e9822b",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
             {
-                "color": "#ff0000",
-                "value": "false",
-                "valueType": "bool"
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
             },
             {
-                "color": "#008000",
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "100",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 630,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc7f45240943c90d",
+        "type": "ui-gauge",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "group": "04a9c0b6c4e9822b",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "100",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c393f64495609f3e",
+        "type": "ui-led",
+        "z": "4ba9896753459e27",
+        "name": "",
+        "group": "04a9c0b6c4e9822b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
                 "value": "true",
-                "valueType": "bool"
+                "valueType": "bool",
+                "color": "#00ff00"
             }
         ],
         "allowColorForValueInMessage": false,
         "shape": "circle",
+        "showBorder": true,
         "showGlow": true,
-        "name": "",
-        "x": 710,
-        "y": 340,
+        "x": 650,
+        "y": 260,
         "wires": []
     },
     {
@@ -1380,26 +1534,6 @@
         "wires": []
     },
     {
-        "id": "3104b4a5a31e7c8a",
-        "type": "openweathermap",
-        "z": "a1c027bdf20d4579",
-        "g": "15626e861d29b27e",
-        "name": "",
-        "wtype": "current",
-        "lon": "",
-        "lat": "",
-        "city": "Machala",
-        "country": "Ecuador",
-        "language": "es",
-        "x": 320,
-        "y": 60,
-        "wires": [
-            [
-                "52c21facadeb7e82"
-            ]
-        ]
-    },
-    {
         "id": "00595b3060d118fa",
         "type": "inject",
         "z": "a1c027bdf20d4579",
@@ -1426,26 +1560,6 @@
         "wires": [
             [
                 "3104b4a5a31e7c8a"
-            ]
-        ]
-    },
-    {
-        "id": "f38cb56cb0fca601",
-        "type": "openweathermap in",
-        "z": "a1c027bdf20d4579",
-        "g": "817573422c9d1136",
-        "name": "",
-        "wtype": "current",
-        "lon": "",
-        "lat": "",
-        "city": "Machala",
-        "country": "Ecuador",
-        "language": "es",
-        "x": 100,
-        "y": 160,
-        "wires": [
-            [
-                "ee16ec924d01a701"
             ]
         ]
     },
@@ -1926,326 +2040,44 @@
         ]
     },
     {
-        "id": "inject_interval",
-        "type": "inject",
-        "z": "flow1",
-        "name": "Generar cada 5s",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.5,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 120,
-        "wires": [
-            [
-                "fn_generate"
-            ]
-        ]
-    },
-    {
-        "id": "fn_generate",
-        "type": "function",
-        "z": "flow1",
-        "name": "Generar temp + hum (2 outputs)",
-        "func": "// Output 1 = temperatura, Output 2 = humedad\nconst temp = (Math.random()*15)+20; // 20.0 - 35.0\nconst hum = Math.floor(Math.random()*50)+30; // 30 - 79\nconst now = Date.now();\nconst msgTemp = { payload: Number(temp.toFixed(1)), topic: 'sensors/temperature', timestamp: now };\nconst msgHum = { payload: Number(hum), topic: 'sensors/humidity', timestamp: now };\nreturn [msgTemp, msgHum];",
-        "outputs": 2,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 120,
-        "wires": [
-            [
-                "mqtt_out_local_temp",
-                "mqtt_out_cloud_temp",
-                "gauge_temp",
-                "chart"
-            ],
-            [
-                "mqtt_out_local_hum",
-                "mqtt_out_cloud_hum",
-                "gauge_hum",
-                "chart"
-            ]
-        ]
-    },
-    {
-        "id": "mqtt_out_local_temp",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub Local - temp",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "cfg_mqtt_local",
-        "x": 650,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "mqtt_out_cloud_temp",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub HiveMQ - temp",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "cfg_mqtt_hivemq",
-        "x": 650,
+        "id": "3104b4a5a31e7c8a",
+        "type": "openweathermap",
+        "z": "a1c027bdf20d4579",
+        "g": "15626e861d29b27e",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Machala",
+        "country": "Ecuador",
+        "language": "es",
+        "x": 320,
         "y": 60,
-        "wires": []
+        "wires": [
+            [
+                "52c21facadeb7e82"
+            ]
+        ]
     },
     {
-        "id": "mqtt_out_local_hum",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub Local - hum",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "broker": "cfg_mqtt_local",
-        "x": 640,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "mqtt_out_cloud_hum",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub HiveMQ - hum",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "broker": "cfg_mqtt_hivemq",
-        "x": 650,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "gauge_temp",
-        "type": "ui_gauge",
-        "z": "flow1",
-        "name": "Gauge Temperatura",
-        "group": "ui_group",
-        "order": 1,
-        "width": 6,
-        "height": 4,
-        "gtype": "gage",
-        "title": "Temperatura (°C)",
-        "label": "°C",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 50,
-        "colors": [],
-        "x": 880,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "gauge_hum",
-        "type": "ui_gauge",
-        "z": "flow1",
-        "name": "Gauge Humedad",
-        "group": "ui_group",
-        "order": 2,
-        "width": 6,
-        "height": 4,
-        "gtype": "gage",
-        "title": "Humedad (%)",
-        "label": "%",
-        "format": "{{value}}",
-        "min": 0,
-        "max": 100,
-        "colors": [],
-        "x": 880,
+        "id": "f38cb56cb0fca601",
+        "type": "openweathermap in",
+        "z": "a1c027bdf20d4579",
+        "g": "817573422c9d1136",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Machala",
+        "country": "Ecuador",
+        "language": "es",
+        "x": 100,
         "y": 160,
-        "wires": []
-    },
-    {
-        "id": "chart",
-        "type": "ui_chart",
-        "z": "flow1",
-        "name": "Chart Temp & Hum",
-        "group": "ui_group",
-        "order": 3,
-        "width": 12,
-        "height": 6,
-        "label": "Temperatura y Humedad",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "auto",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": 1,
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [],
-        "outputs": 1,
-        "x": 890,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ui_button_send",
-        "type": "ui_button",
-        "z": "flow1",
-        "name": "Enviar nombre+fecNac",
-        "group": "ui_group",
-        "order": 4,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "Enviar Datos",
-        "tooltip": "Envía nombre y fecha de nacimiento a ambos brokers",
-        "color": "",
-        "bgcolor": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "x": 340,
-        "y": 340,
         "wires": [
             [
-                "fn_send_info"
+                "ee16ec924d01a701"
             ]
         ]
-    },
-    {
-        "id": "fn_send_info",
-        "type": "function",
-        "z": "flow1",
-        "name": "Formatear info (2 outputs)",
-        "func": "// Cambia estos valores por los tuyos antes de la entrega\nconst NAME = 'TU_NOMBRE_COMPLETO';\nconst DOB = 'YYYY-MM-DD';\nconst payload = { name: NAME, fecha_nacimiento: DOB, timestamp: new Date().toISOString() };\nconst msg = { payload: JSON.stringify(payload), topic: 'sensors/info' };\n// output 1 -> brokers (temp/hum mqtt out nodes no reciben esto)\nreturn [msg, msg];",
-        "outputs": 2,
-        "noerr": 0,
-        "x": 600,
-        "y": 340,
-        "wires": [
-            [
-                "mqtt_out_local_info"
-            ],
-            [
-                "mqtt_out_cloud_info"
-            ]
-        ]
-    },
-    {
-        "id": "mqtt_out_local_info",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub Local - info",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "broker": "cfg_mqtt_local",
-        "x": 880,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "mqtt_out_cloud_info",
-        "type": "mqtt out",
-        "z": "flow1",
-        "name": "Pub HiveMQ - info",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "broker": "cfg_mqtt_hivemq",
-        "x": 880,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "mqtt_in_local",
-        "type": "mqtt in",
-        "z": "flow1",
-        "name": "Sub Local (sensors/#)",
-        "topic": "sensors/#",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "cfg_mqtt_local",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 380,
-        "y": 520,
-        "wires": [
-            [
-                "debug_local"
-            ]
-        ]
-    },
-    {
-        "id": "mqtt_in_cloud",
-        "type": "mqtt in",
-        "z": "flow1",
-        "name": "Sub HiveMQ (sensors/#)",
-        "topic": "sensors/#",
-        "qos": "0",
-        "broker": "cfg_mqtt_hivemq",
-        "inputs": 0,
-        "x": 380,
-        "y": 580,
-        "wires": [
-            [
-                "debug_cloud"
-            ]
-        ]
-    },
-    {
-        "id": "debug_local",
-        "type": "debug",
-        "z": "flow1",
-        "name": "Debug Local",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 640,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "debug_cloud",
-        "type": "debug",
-        "z": "flow1",
-        "name": "Debug HiveMQ",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 640,
-        "y": 580,
-        "wires": []
     },
     {
         "id": "d9b60626e0299e93",
@@ -2769,6 +2601,393 @@
             [
                 "9aa9365caf4662e8"
             ]
+        ]
+    },
+    {
+        "id": "58fada6ed565b227",
+        "type": "inject",
+        "z": "27828e16aed13ba8",
+        "name": "Simular 1 Hora (cada 5 seg)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "tick",
+        "payloadType": "str",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "759dae97a44abc46"
+            ]
+        ]
+    },
+    {
+        "id": "759dae97a44abc46",
+        "type": "function",
+        "z": "27828e16aed13ba8",
+        "name": "Motor de Simulación (Gemelo Digital)",
+        "func": "// --- 1. OBTENER ESTADO ANTERIOR (O INICIALIZAR) ---\nlet celdas = flow.get(\"celdas\") || [\n    { id: 1, estado: \"parada\", unid_ok_hora: 0, unid_ok_total_turno: 0, tiempo_ciclo: 10, utilizacion: 0, tiempo_espera: 0, horas_trabajadas: 0 },\n    { id: 2, estado: \"parada\", unid_ok_hora: 0, unid_ok_total_turno: 0, tiempo_ciclo: 12, utilizacion: 0, tiempo_espera: 0, horas_trabajadas: 0 },\n    { id: 3, estado: \"parada\", unid_ok_hora: 0, unid_ok_total_turno: 0, tiempo_ciclo: 8, utilizacion: 0, tiempo_espera: 0, horas_trabajadas: 0 },\n    { id: 4, estado: \"parada\", unid_ok_hora: 0, unid_ok_total_turno: 0, tiempo_ciclo: 10, utilizacion: 0, tiempo_espera: 0, horas_trabajadas: 0 },\n    { id: 5, estado: \"parada\", unid_ok_hora: 0, unid_ok_total_turno: 0, tiempo_ciclo: 15, utilizacion: 0, tiempo_espera: 0, horas_trabajadas: 0 }\n];\nlet estado_sim = flow.get(\"estado_sim\") || { hora_turno: 0, num_turno: 1, horas_totales: 0 };\nlet chart_data = flow.get(\"chart_data\") || { series: [\"Producción\"], data: [[]], labels: [] };\n\n// --- 2. OBTENER PARÁMETROS DEL DASHBOARD ---\nlet staffing = flow.get(\"staffing\") || 3;\nlet meta_hora_por_celda = flow.get(\"meta_hora\") || 5;\n\n// --- 3. AVANZAR SIMULACIÓN 1 HORA ---\nestado_sim.hora_turno++;\nestado_sim.horas_totales++;\n\nlet produccion_total_hora = 0;\nlet produccion_total_turno_acumulada = 0;\n\n// --- 4. SIMULACIÓN POR CELDA (Flujo, KPIs) ---\nfor (let i = 0; i < celdas.length; i++) {\n    let celda = celdas[i];\n    \n    // 4.1. Reasignación de Personal (Ampliación \"Qué-pasa-si\")\n    if (i < staffing) {\n        // Celda TIENE personal.\n        \n        // 4.2. Simulación Cuello de Botella (Objetivo)\n        // Celda 2 depende de Celda 1.\n        if (celda.id === 2 && celdas[0].estado !== 'trabajando') {\n            celda.estado = 'esperando';\n            celda.tiempo_espera += 1; // KPI: Tiempos de espera\n            celda.unid_ok_hora = 0;\n        } \n        // 4.3. Simulación de Falla Aleatoria (para celdas que no están esperando)\n        else if (celda.estado !== 'esperando') {\n            let rand = Math.random();\n            if (rand < 0.85) { // 85% chance de trabajar\n                celda.estado = 'trabajando';\n                // Calcular producción de la hora\n                celda.unid_ok_hora = Math.floor(60 / celda.tiempo_ciclo);\n                celda.unid_ok_total_turno += celda.unid_ok_hora;\n                celda.horas_trabajadas += 1;\n            } else { // 15% chance de falla\n                celda.estado = 'parada';\n                celda.unid_ok_hora = 0;\n            }\n        }\n    } else {\n        // Celda NO tiene personal\n        celda.estado = 'sin_personal';\n        celda.unid_ok_hora = 0;\n    }\n    \n    // 4.4. Calcular KPIs de Celda (Variables)\n    // Prevenir división por cero en el primer tick del reseteo\n    if (estado_sim.hora_turno > 0) {\n        celda.utilizacion = (celda.horas_trabajadas / estado_sim.hora_turno) * 100; // KPI: Utilización\n    } else {\n        celda.utilizacion = 0;\n    }\n    produccion_total_turno_acumulada += celda.unid_ok_total_turno;\n    produccion_total_hora += celda.unid_ok_hora;\n}\n\n// --- 5. PREPARAR SALIDAS (Dashboard) ---\n\n// Salida 1: Datos para el Grid de Celdas (se envía siempre)\nlet msg_grid = { payload: celdas };\n\n// Salida 2: Datos para la Tabla Comparativa (se envía siempre)\nlet meta_hora_total_staffed = meta_hora_por_celda * staffing;\nlet msg_tabla = { \n    payload: {\n        hora: estado_sim.hora_turno,\n        turno: estado_sim.num_turno,\n        staffing: staffing,\n        meta_hora: meta_hora_total_staffed,\n        real_hora: produccion_total_hora,\n        meta_turno_acum: meta_hora_total_staffed * estado_sim.hora_turno,\n        real_turno_acum: produccion_total_turno_acumulada\n    }\n};\n\nlet msg_turno_fin = null;\n\n// --- 6. AGREGACIÓN POR TURNO (Flujo) ---\nif (estado_sim.hora_turno >= 8) { // Asumimos turno de 8 horas\n    let meta_total_turno = meta_hora_total_staffed * 8;\n    let real_total_turno = produccion_total_turno_acumulada;\n    let cumplimiento = 0;\n    if (meta_total_turno > 0) {\n        cumplimiento = (real_total_turno / meta_total_turno) * 100;\n    }\n    \n    // 6.1. Preparar Salida 3: Datos de fin de turno (Gráfico y Alerta)\n    msg_turno_fin = {\n        payload: {\n            turno: estado_sim.num_turno,\n            meta: meta_total_turno,\n            real: real_total_turno,\n            cumplimiento: cumplimiento,\n            // Mensaje para la alerta\n            alerta_msg: cumplimiento < 90 ? \n                `ALERTA: Desviación en Turno ${estado_sim.num_turno}. Cumplimiento: ${cumplimiento.toFixed(1)}%` : \n                `Turno ${estado_sim.num_turno} OK. Cumplimiento: ${cumplimiento.toFixed(1)}%`,\n            // Flag para el switch de alerta\n            hubo_desviacion: cumplimiento < 90\n        }\n    };\n    \n    // 6.2. Actualizar datos históricos del gráfico\n    chart_data.data[0].push(real_total_turno);\n    chart_data.labels.push(`T${estado_sim.num_turno}`);\n    // Mantener solo los últimos 10 turnos\n    if (chart_data.data[0].length > 10) {\n        chart_data.data[0].shift();\n        chart_data.labels.shift();\n    }\n    flow.set(\"chart_data\", chart_data);\n    \n    // 6.3. Resetear para el siguiente turno\n    estado_sim.hora_turno = 0;\n    estado_sim.num_turno++;\n    for (let celda of celdas) {\n        celda.unid_ok_total_turno = 0;\n        celda.horas_trabajadas = 0;\n        celda.tiempo_espera = 0;\n        celda.utilizacion = 0;\n    }\n}\n\n// --- 7. GUARDAR ESTADO PARA PRÓXIMO TICK ---\nflow.set(\"celdas\", celdas);\nflow.set(\"estado_sim\", estado_sim);\n\n// Retornar mensajes a las 3 salidas del nodo\nreturn [ msg_grid, msg_tabla, msg_turno_fin ];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Código de inicialización (opcional)\nflow.set(\"celdas\", undefined);\nflow.set(\"estado_sim\", undefined);\nflow.set(\"chart_data\", undefined);\nflow.set(\"staffing\", 3);\nflow.set(\"meta_hora\", 5);",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 140,
+        "wires": [
+            [
+                "6252431a8f8f5663"
+            ],
+            [
+                "a87552be15cb609d"
+            ],
+            [
+                "3cd996f105a72647",
+                "f3d85715e21f9404"
+            ]
+        ]
+    },
+    {
+        "id": "6252431a8f8f5663",
+        "type": "ui-template",
+        "z": "27828e16aed13ba8",
+        "group": "6d47c419f0247b5f",
+        "name": "Grid de Celdas con estado (colores)",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .grid-container {\n        display: grid;\n        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));\n        gap: 10px;\n        padding: 10px;\n    }\n    .celda {\n        border: 1px solid #444;\n        border-radius: 5px;\n        padding: 10px;\n        text-align: center;\n        color: #333;\n        transition: background-color 0.3s ease;\n    }\n    .celda-title {\n        font-weight: bold;\n        font-size: 1.1em;\n        border-bottom: 1px solid #555;\n        margin-bottom: 5px;\n        padding-bottom: 5px;\n    }\n    .celda-kpi {\n        font-size: 0.9em;\n        text-align: left;\n        margin-top: 3px;\n    }\n    .celda-kpi b {\n        color: #ccc;\n    }\n    /* Clases de estado para colores */\n    .celda-estado-trabajando { background-color: #4CAF50; color: white; }\n    .celda-estado-parada { background-color: #F44336; color: white; }\n    .celda-estado-esperando { background-color: #FFC107; color: black; }\n    .celda-estado-sin_personal { background-color: #607D8B; color: white; }\n\n    /* --- NUEVO CSS PARA BARRA DE UTILIZACIÓN --- */\n    .util-bar-container {\n        background-color: rgba(0,0,0,0.3);\n        border-radius: 4px;\n        height: 14px;\n        width: 100%;\n        margin-top: 5px;\n        border: 1px solid rgba(0,0,0,0.2);\n        overflow: hidden;\n    }\n    .util-bar-value {\n        background-color: #FFF;\n        opacity: 0.7;\n        height: 100%;\n        transition: width 0.3s ease;\n    }\n    /* --- FIN DE CSS NUEVO --- */\n</style>\n\n<div class=\"grid-container\">\n    \n    <div v-for=\"celda in msg.payload\" :key=\"celda.id\" class=\"celda\" :class=\"'celda-estado-' + celda.estado\">\n        <div class=\"celda-title\">Celda {{celda.id}}</div>\n        <div class=\"celda-kpi\"><b>Estado:</b> {{celda.estado}}</div>\n        <div class=\"celda-kpi\"><b>Prod. (h):</b> {{celda.unid_ok_hora}}</div>\n        \n        \n        <div class=\"celda-kpi\">\n            <b>Util (%):</b> {{celda.utilizacion.toFixed(1)}}%\n            <div class=\"util-bar-container\">\n                <div class=\"util-bar-value\" :style=\"{ width: celda.utilizacion.toFixed(1) + '%' }\"></div>\n            </div>\n        </div>\n        \n        \n        <div class=\"celda-kpi\"><b>Espera (h):</b> {{celda.tiempo_espera}}</div>\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 830,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a87552be15cb609d",
+        "type": "ui-template",
+        "z": "27828e16aed13ba8",
+        "group": "a899fcbf322003a7",
+        "name": "Tabla comparativa metas vs real",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .kpi-table {\n        width: 100%;\n        border-collapse: collapse;\n    }\n    .kpi-table td {\n        padding: 8px 10px;\n        border-bottom: 1px solid #444;\n        font-size: 1.0em;\n    }\n    .kpi-label {\n        font-weight: bold;\n        color: #ccc;\n        width: 60%;\n    }\n    .kpi-value {\n        text-align: right;\n        font-family: monospace;\n        font-size: 1.1em;\n        font-weight: bold;\n    }\n</style>\n\n<div v-if=\"msg.payload\">\n    <h4 style=\"margin-top:0; margin-bottom: 10px;\">Turno {{msg.payload.turno}} (Hora {{msg.payload.hora}}/8)</h4>\n    <table class=\"kpi-table\">\n        <tr>\n            <td class=\"kpi-label\">Personal (Staffing)</td>\n            <td class=\"kpi-value\">{{msg.payload.staffing}}</td>\n        </tr>\n        <tr>\n            <td class=\"kpi-label\">Meta por Hora (Total)</td>\n            <td class=\"kpi-value\">{{msg.payload.meta_hora}}</td>\n        </tr>\n        <tr>\n            <td class=\"kpi-label\">Producción Hora Actual</td>\n            <td class=\"kpi-value\">{{msg.payload.real_hora}}</td>\n        </tr>\n        <tr>\n            <td class=\"kpi-label\">Meta Acum. Turno</td>\n            <td class=\"kpi-value\">{{msg.payload.meta_turno_acum}}</td>\n        </tr>\n        <tr>\n            <td class=\"kpi-label\">Real Acum. Turno</td>\n            <td class=\"kpi-value\">{{msg.payload.real_turno_acum}}</td>\n        </tr>\n    </table>\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 810,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cd996f105a72647",
+        "type": "change",
+        "z": "27828e16aed13ba8",
+        "name": "Cargar Datos del Gráfico",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "chart_data",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 300,
+        "wires": [
+            [
+                "0382443c45f10b59"
+            ]
+        ]
+    },
+    {
+        "id": "0382443c45f10b59",
+        "type": "ui-chart",
+        "z": "27828e16aed13ba8",
+        "group": "b1e725e9fb17355d",
+        "name": "Gráfico",
+        "label": "Producción Total por Turno",
+        "order": 1,
+        "chartType": "bar",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "",
+        "xAxisProperty": "labels",
+        "xAxisPropertyType": "property",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "data",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": "",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": true,
+        "removeOlder": "0",
+        "removeOlderPoints": "0",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 0,
+        "height": 0,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1050,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3d85715e21f9404",
+        "type": "switch",
+        "z": "27828e16aed13ba8",
+        "name": "¿Hubo Desviación? (<90%)",
+        "property": "payload.hubo_desviacion",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 200,
+        "wires": [
+            [
+                "e482b7daa12d079b"
+            ]
+        ]
+    },
+    {
+        "id": "e482b7daa12d079b",
+        "type": "change",
+        "z": "27828e16aed13ba8",
+        "name": "Preparar Msg de Alerta",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.alerta_msg",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Alerta de Producción",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 200,
+        "wires": [
+            [
+                "1f15182913099aac"
+            ]
+        ]
+    },
+    {
+        "id": "1f15182913099aac",
+        "type": "ui-notification",
+        "z": "27828e16aed13ba8",
+        "ui": "9ed003eafac2263f",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#F44336",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Cerrar",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "Alerta de Desviación",
+        "x": 1240,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7194e74bd76d0629",
+        "type": "ui-slider",
+        "z": "27828e16aed13ba8",
+        "group": "c246d49182a70895",
+        "name": "Parámetro: Staffing",
+        "label": "Personal (Staffing):",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "msg.payload",
+        "topicType": "str",
+        "showTicks": "false",
+        "min": "1",
+        "max": "5",
+        "step": "1",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "f09b0f4b551351a4"
+            ]
+        ]
+    },
+    {
+        "id": "854b2e743c7f8adb",
+        "type": "ui-number-input",
+        "z": "27828e16aed13ba8",
+        "group": "c246d49182a70895",
+        "name": "Parámetro: Meta por Hora",
+        "label": "Meta por Hora (por celda):",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 1,
+        "max": 20,
+        "step": 1,
+        "tooltip": "",
+        "passthru": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "f4041038df49cdb5"
+            ]
+        ]
+    },
+    {
+        "id": "f09b0f4b551351a4",
+        "type": "change",
+        "z": "27828e16aed13ba8",
+        "name": "set flow.staffing",
+        "rules": [
+            {
+                "t": "set",
+                "p": "staffing",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4041038df49cdb5",
+        "type": "change",
+        "z": "27828e16aed13ba8",
+        "name": "set flow.meta_hora",
+        "rules": [
+            {
+                "t": "set",
+                "p": "meta_hora",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44e61fbefc0ed1b1",
+        "type": "ui-control",
+        "z": "27828e16aed13ba8",
+        "name": "Al conectar Dashboard",
+        "ui": "9ed003eafac2263f",
+        "events": "connect",
+        "x": 780,
+        "y": 400,
+        "wires": [
+            []
         ]
     }
 ]
