@@ -493,6 +493,7 @@
         "type": "ui-page",
         "name": "Page 2",
         "ui": "9ed003eafac2263f",
+        "path": "/page2",
         "icon": "home",
         "layout": "grid",
         "theme": "0a96ebbbec5e6ed1",
