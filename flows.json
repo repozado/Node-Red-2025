@@ -65,9 +65,9 @@
             "6bdfcab5d3043e4e",
             "f3c5cbebd30cccfa"
         ],
-        "x": 14,
+        "x": 4,
         "y": 319,
-        "w": 752,
+        "w": 762,
         "h": 82
     },
     {
@@ -90,9 +90,9 @@
             "ed70c0530786aab6",
             "966feb7ffbe95305"
         ],
-        "x": 14,
+        "x": 4,
         "y": 219,
-        "w": 1012,
+        "w": 1022,
         "h": 82
     },
     {
@@ -112,9 +112,9 @@
             "f38cb56cb0fca601",
             "ee16ec924d01a701"
         ],
-        "x": 14,
+        "x": -46,
         "y": 119,
-        "w": 392,
+        "w": 452,
         "h": 82
     },
     {
@@ -135,9 +135,9 @@
             "3104b4a5a31e7c8a",
             "00595b3060d118fa"
         ],
-        "x": 14,
+        "x": 4,
         "y": 19,
-        "w": 612,
+        "w": 622,
         "h": 82
     },
     {
@@ -296,99 +296,96 @@
         "sessionExpiry": ""
     },
     {
-        "id": "9ed003eafac2263f",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
-        "id": "0a96ebbbec5e6ed1",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094CE",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "fad182eabb51e426",
-        "type": "ui-page",
-        "name": "Page 1",
-        "ui": "9ed003eafac2263f",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "0a96ebbbec5e6ed1",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": 0,
-                "cols": 3
-            },
-            {
-                "name": "Tablet",
-                "px": 576,
-                "cols": 6
-            },
-            {
-                "name": "Small Desktop",
-                "px": 768,
-                "cols": 9
-            },
-            {
-                "name": "Desktop",
-                "px": 1024,
-                "cols": 12
-            }
-        ],
-        "order": 3,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "04a9c0b6c4e9822b",
-        "type": "ui-group",
-        "name": "Group 1",
-        "page": "fad182eabb51e426",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
         "id": "1c13972162de186e",
         "type": "mqtt-broker",
         "name": "",
         "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cfg_mqtt_local",
+        "type": "mqtt-broker",
+        "name": "Mosquitto local",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "node-red-local-{{random}}",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cfg_mqtt_hivemq",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Cloud ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "node-red-cloud-{{random}}",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9ad175b279df9b5c",
+        "type": "mqtt-broker",
+        "name": "HIveMQ",
+        "broker": "broker.hivemq.com",
         "port": 1883,
         "clientid": "",
         "autoConnect": true,
@@ -554,6 +551,80 @@
         }
     },
     {
+        "id": "ui_tab",
+        "type": "ui_tab",
+        "name": "Dashboard Sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group",
+        "type": "ui_group",
+        "name": "Sensor Panel",
+        "tab": "ui_tab",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "9ed003eafac2263f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "fad182eabb51e426",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "9ed003eafac2263f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0a96ebbbec5e6ed1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
         "id": "68c95bba92cddcd7",
         "type": "ui-page",
         "name": "Page 2",
@@ -588,124 +659,6 @@
         "className": "",
         "visible": "true",
         "disabled": "false"
-    },
-    {
-        "id": "b0b872640ddfeb87",
-        "type": "ui-group",
-        "name": "Group 2",
-        "page": "68c95bba92cddcd7",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "cfg_mqtt_local",
-        "type": "mqtt-broker",
-        "name": "Mosquitto local",
-        "broker": "test.mosquitto.org",
-        "port": "1883",
-        "clientid": "node-red-local-{{random}}",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "cfg_mqtt_hivemq",
-        "type": "mqtt-broker",
-        "name": "HiveMQ Cloud ",
-        "broker": "broker.hivemq.com",
-        "port": "1883",
-        "clientid": "node-red-cloud-{{random}}",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "ui_tab",
-        "type": "ui_tab",
-        "name": "Dashboard Sensores",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "ui_group",
-        "type": "ui_group",
-        "name": "Sensor Panel",
-        "tab": "ui_tab",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false
-    },
-    {
-        "id": "9ad175b279df9b5c",
-        "type": "mqtt-broker",
-        "name": "HIveMQ",
-        "broker": "broker.hivemq.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
     },
     {
         "id": "2256f48bd58c2398",
@@ -744,6 +697,34 @@
         "disabled": "false"
     },
     {
+        "id": "04a9c0b6c4e9822b",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "fad182eabb51e426",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "b0b872640ddfeb87",
+        "type": "ui-group",
+        "name": "Group 2",
+        "page": "68c95bba92cddcd7",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "c9528b87d7b88974",
         "type": "ui-group",
         "name": "Group Sensor",
@@ -756,6 +737,36 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "0a96ebbbec5e6ed1",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "f8121fc439337aa6",
+        "type": "ui-link",
+        "name": "Link 1",
+        "ui": "9ed003eafac2263f",
+        "path": "/",
+        "icon": "home",
+        "order": 4,
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "fe12363aecc689ba",
@@ -1671,138 +1682,6 @@
         ]
     },
     {
-        "id": "810cc5f8c437e7b3",
-        "type": "ui-gauge",
-        "z": "a1c027bdf20d4579",
-        "name": "Temperatura",
-        "group": "b0b872640ddfeb87",
-        "order": 3,
-        "value": "payload.temperatura",
-        "valueType": "msg",
-        "width": 3,
-        "height": 3,
-        "gtype": "gauge-half",
-        "gstyle": "needle",
-        "title": "Temperatura",
-        "alwaysShowTitle": false,
-        "floatingTitlePosition": "top-left",
-        "units": "C°",
-        "icon": "",
-        "prefix": "",
-        "suffix": "",
-        "segments": [
-            {
-                "from": "0",
-                "color": "#5cd65c",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "30",
-                "color": "#ffc800",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "50",
-                "color": "#ea5353",
-                "text": "",
-                "textType": "label"
-            }
-        ],
-        "min": 0,
-        "max": "100",
-        "sizeThickness": 16,
-        "sizeGap": 4,
-        "sizeKeyThickness": 8,
-        "styleRounded": true,
-        "styleGlow": false,
-        "className": "",
-        "x": 950,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ae99ec23aaf7c3f0",
-        "type": "ui-gauge",
-        "z": "a1c027bdf20d4579",
-        "name": "",
-        "group": "b0b872640ddfeb87",
-        "order": 2,
-        "value": "payload.humedad",
-        "valueType": "msg",
-        "width": 3,
-        "height": 3,
-        "gtype": "gauge-half",
-        "gstyle": "needle",
-        "title": "Humedad",
-        "alwaysShowTitle": false,
-        "floatingTitlePosition": "top-left",
-        "units": "%",
-        "icon": "",
-        "prefix": "",
-        "suffix": "",
-        "segments": [
-            {
-                "from": "0",
-                "color": "#5cd65c",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "30",
-                "color": "#ffc800",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "60",
-                "color": "#ea5353",
-                "text": "",
-                "textType": "label"
-            }
-        ],
-        "min": 0,
-        "max": "100",
-        "sizeThickness": 16,
-        "sizeGap": 4,
-        "sizeKeyThickness": 8,
-        "styleRounded": true,
-        "styleGlow": false,
-        "className": "",
-        "x": 940,
-        "y": 600,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6bc15551d6638aa7",
-        "type": "ui-text",
-        "z": "a1c027bdf20d4579",
-        "group": "b0b872640ddfeb87",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "style": true,
-        "font": "Arial,Arial,Helvetica,sans-serif",
-        "fontSize": 16,
-        "color": "#ca1c1c",
-        "wrapText": false,
-        "className": "",
-        "value": "payload.direccion",
-        "valueType": "msg",
-        "x": 930,
-        "y": 440,
-        "wires": []
-    },
-    {
         "id": "d25ac98857fbfee5",
         "type": "change",
         "z": "a1c027bdf20d4579",
@@ -1912,6 +1791,138 @@
             [
                 "d25ac98857fbfee5"
             ]
+        ]
+    },
+    {
+        "id": "6bc15551d6638aa7",
+        "type": "ui-text",
+        "z": "a1c027bdf20d4579",
+        "group": "b0b872640ddfeb87",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": 16,
+        "color": "#ca1c1c",
+        "wrapText": false,
+        "className": "",
+        "value": "payload.direccion",
+        "valueType": "msg",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "810cc5f8c437e7b3",
+        "type": "ui-gauge",
+        "z": "a1c027bdf20d4579",
+        "name": "Temperatura",
+        "group": "b0b872640ddfeb87",
+        "order": 3,
+        "value": "payload.temperatura",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperatura",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "C°",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 950,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae99ec23aaf7c3f0",
+        "type": "ui-gauge",
+        "z": "a1c027bdf20d4579",
+        "name": "",
+        "group": "b0b872640ddfeb87",
+        "order": 2,
+        "value": "payload.humedad",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Humedad",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 940,
+        "y": 600,
+        "wires": [
+            []
         ]
     },
     {
@@ -2267,40 +2278,6 @@
         ]
     },
     {
-        "id": "e3c5545904f9b9b6",
-        "type": "random",
-        "z": "c0fd1faa777aecf0",
-        "name": "random temp",
-        "low": "0",
-        "high": "50",
-        "inte": "true",
-        "property": "payload",
-        "x": 270,
-        "y": 200,
-        "wires": [
-            [
-                "cbe2be5c85e6eda9"
-            ]
-        ]
-    },
-    {
-        "id": "e004d68c5ea8311f",
-        "type": "random",
-        "z": "c0fd1faa777aecf0",
-        "name": "random hum",
-        "low": "0",
-        "high": "100",
-        "inte": "true",
-        "property": "payload",
-        "x": 270,
-        "y": 240,
-        "wires": [
-            [
-                "9aa9365caf4662e8"
-            ]
-        ]
-    },
-    {
         "id": "593333d336a94f14",
         "type": "mqtt out",
         "z": "c0fd1faa777aecf0",
@@ -2495,6 +2472,164 @@
         ]
     },
     {
+        "id": "1ca75e1865802f5b",
+        "type": "function",
+        "z": "c0fd1faa777aecf0",
+        "name": "function 1",
+        "func": "const NAME = 'JOSE ALEXANDER RODRIGUEZ ORDOÑEZ';\nconst DOB = '2005-02-10';\nconst payload = { name: NAME, fecha_nacimiento: DOB};\nconst msgINF = { payload: JSON.stringify(payload), topic: 'playa/agua/pato/inf' };\nreturn msgINF;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 520,
+        "wires": [
+            [
+                "008643d7166f14fe",
+                "c664304c6153ac5c"
+            ]
+        ]
+    },
+    {
+        "id": "008643d7166f14fe",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "HiveMQ hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9ad175b279df9b5c",
+        "x": 850,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c664304c6153ac5c",
+        "type": "mqtt out",
+        "z": "c0fd1faa777aecf0",
+        "name": "Mosquito hum",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5908edeada9de2c5",
+        "x": 860,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "590d1730de82637a",
+        "type": "ui-button",
+        "z": "c0fd1faa777aecf0",
+        "group": "c9528b87d7b88974",
+        "name": "DATOS",
+        "label": "button",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "1ca75e1865802f5b"
+            ]
+        ]
+    },
+    {
+        "id": "6279780e34b428d9",
+        "type": "ui-chart",
+        "z": "c0fd1faa777aecf0",
+        "group": "c9528b87d7b88974",
+        "name": "TemperaturaxHumedad",
+        "label": "chart",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "45bab41a9db658ce",
         "type": "ui-gauge",
         "z": "c0fd1faa777aecf0",
@@ -2603,161 +2738,37 @@
         ]
     },
     {
-        "id": "6279780e34b428d9",
-        "type": "ui-chart",
+        "id": "e3c5545904f9b9b6",
+        "type": "random",
         "z": "c0fd1faa777aecf0",
-        "group": "c9528b87d7b88974",
-        "name": "TemperaturaxHumedad",
-        "label": "chart",
-        "order": 4,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
-        "className": "",
-        "interpolation": "linear",
-        "x": 690,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "590d1730de82637a",
-        "type": "ui-button",
-        "z": "c0fd1faa777aecf0",
-        "group": "c9528b87d7b88974",
-        "name": "DATOS",
-        "label": "button",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 460,
-        "y": 520,
+        "name": "random temp",
+        "low": "0",
+        "high": "50",
+        "inte": "true",
+        "property": "payload",
+        "x": 270,
+        "y": 200,
         "wires": [
             [
-                "1ca75e1865802f5b"
+                "cbe2be5c85e6eda9"
             ]
         ]
     },
     {
-        "id": "1ca75e1865802f5b",
-        "type": "function",
+        "id": "e004d68c5ea8311f",
+        "type": "random",
         "z": "c0fd1faa777aecf0",
-        "name": "function 1",
-        "func": "const NAME = 'JOSE ALEXANDER RODRIGUEZ ORDOÑEZ';\nconst DOB = '2005-02-10';\nconst payload = { name: NAME, fecha_nacimiento: DOB};\nconst msgINF = { payload: JSON.stringify(payload), topic: 'playa/agua/pato/inf' };\nreturn msgINF;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 520,
+        "name": "random hum",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 270,
+        "y": 240,
         "wires": [
             [
-                "008643d7166f14fe",
-                "c664304c6153ac5c"
+                "9aa9365caf4662e8"
             ]
         ]
-    },
-    {
-        "id": "008643d7166f14fe",
-        "type": "mqtt out",
-        "z": "c0fd1faa777aecf0",
-        "name": "HiveMQ hum",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "9ad175b279df9b5c",
-        "x": 850,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "c664304c6153ac5c",
-        "type": "mqtt out",
-        "z": "c0fd1faa777aecf0",
-        "name": "Mosquito hum",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "5908edeada9de2c5",
-        "x": 860,
-        "y": 540,
-        "wires": []
     }
 ]

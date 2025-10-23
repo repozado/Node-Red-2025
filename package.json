@@ -2,7 +2,10 @@
     "name": "Node-Red-2025",
     "description": "Para practicar Node-Red",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "@flowfuse/node-red-dashboard": "~1.29.0",
+        "node-red-node-random": "~0.4.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
