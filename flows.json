@@ -414,6 +414,26 @@
         "sessionExpiry": ""
     },
     {
+        "id": "9ed003eafac2263f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
         "id": "0a96ebbbec5e6ed1",
         "type": "ui-theme",
         "name": "Default Theme",
@@ -473,7 +493,6 @@
         "type": "ui-page",
         "name": "Page 2",
         "ui": "9ed003eafac2263f",
-        "path": "/pagedos",
         "icon": "home",
         "layout": "grid",
         "theme": "0a96ebbbec5e6ed1",
@@ -692,26 +711,6 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
-    },
-    {
-        "id": "9ed003eafac2263f",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": false,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
     },
     {
         "id": "fe12363aecc689ba",
