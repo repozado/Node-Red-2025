@@ -414,26 +414,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "9ed003eafac2263f",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
         "id": "0a96ebbbec5e6ed1",
         "type": "ui-theme",
         "name": "Default Theme",
@@ -493,7 +473,7 @@
         "type": "ui-page",
         "name": "Page 2",
         "ui": "9ed003eafac2263f",
-        "path": "/page2",
+        "path": "/pagedos",
         "icon": "home",
         "layout": "grid",
         "theme": "0a96ebbbec5e6ed1",
@@ -714,160 +694,24 @@
         "groupType": "default"
     },
     {
-        "id": "4b1cd1e2e3eb688b",
-        "type": "ui_tab",
-        "name": "Sensores",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "c2b2186bec94970f",
-        "type": "ui_group",
-        "name": "Temperatura",
-        "tab": "4b1cd1e2e3eb688b",
-        "order": 2,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "97d5893b68089ef9",
-        "type": "ui_group",
-        "name": "Humedad",
-        "tab": "4b1cd1e2e3eb688b",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "caa83089.9c72b",
-        "type": "ui_group",
-        "name": "Estado",
-        "tab": "4b1cd1e2e3eb688b",
-        "order": 1,
-        "disp": true,
-        "width": "5",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "d1f9ff9d7e0c372d",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "ui_tab",
-        "type": "ui_tab",
-        "name": "Dashboard Sensores",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "ui_group",
-        "type": "ui_group",
-        "name": "Sensor Panel",
-        "tab": "ui_tab",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false
+        "id": "9ed003eafac2263f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": false,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
     },
     {
         "id": "fe12363aecc689ba",
@@ -1265,7 +1109,7 @@
         "z": "4ba9896753459e27",
         "name": "",
         "group": "04a9c0b6c4e9822b",
-        "order": 2,
+        "order": 3,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -1319,7 +1163,7 @@
         "z": "4ba9896753459e27",
         "name": "",
         "group": "04a9c0b6c4e9822b",
-        "order": 3,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -1937,7 +1781,7 @@
         "z": "a1c027bdf20d4579",
         "name": "Temperatura",
         "group": "b0b872640ddfeb87",
-        "order": 3,
+        "order": 2,
         "value": "payload.temperatura",
         "valueType": "msg",
         "width": 3,
@@ -1991,7 +1835,7 @@
         "z": "a1c027bdf20d4579",
         "name": "",
         "group": "b0b872640ddfeb87",
-        "order": 2,
+        "order": 3,
         "value": "payload.humedad",
         "valueType": "msg",
         "width": 3,
@@ -2406,7 +2250,7 @@
         "group": "c9528b87d7b88974",
         "name": "TemperaturaxHumedad",
         "label": "chart",
-        "order": 4,
+        "order": 2,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -2521,7 +2365,7 @@
         "z": "c0fd1faa777aecf0",
         "name": "HUMEDAD",
         "group": "c9528b87d7b88974",
-        "order": 2,
+        "order": 4,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -2832,8 +2676,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 200,
+        "x": 1030,
+        "y": 240,
         "wires": [
             [
                 "1f15182913099aac"
@@ -2946,8 +2790,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 280,
+        "x": 460,
+        "y": 260,
         "wires": [
             []
         ]
@@ -2971,7 +2815,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 490,
         "y": 340,
         "wires": [
             []
