@@ -16,6 +16,12 @@
             "tours": {
                 "welcome": "4.1.0"
             }
+        },
+        "menu-menu-item-sidebar": true,
+        "menu-menu-item-palette": false,
+        "debug": {
+            "filter": "filterCurrent",
+            "filteredNodes": []
         }
     }
 }
